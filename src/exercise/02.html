@@ -10,10 +10,13 @@
   <script type="module">
     const rootElement = document.getElementById('root');
 
-    const elementProps = {children: 'Hello World', className: 'container'};
-    const elementType = 'div';
-    const reactElement = React.createElement(elementType, elementProps);
+    const innerHello = React.createElement('span', {children: 'Hello'})
+    const innerWorld = React.createElement('span', {children: 'World'})
+
+    const reactContainer = React.createElement('div', {className: 'container', children: [innerHello, ' ', innerWorld]});
     
-    ReactDOM.render(reactElement, rootElement);
+    ReactDOM.render(reactContainer, rootElement);
+
+
   </script>
 </body>
